@@ -1,3 +1,66 @@
+.btn-right {
+    top: 40%;
+    right: 0px;
+    transform: translateY(-50%);
+    padding: 20px 25px;
+    background: linear-gradient(to bottom, #FD7600 0%, #FFA805 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.btn-right i {
+    font-size: 22px;
+}
+
+.btn-right:hover {
+    background: linear-gradient(to bottom, #AD2F87 0%, #2E2070 100%);
+}
+
+#header .navbar {
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+#logo {
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.collapse {
+    width: fit-content;
+    flex-grow: 0;
+}
+
+#header .navbar li a {
+    font-weight: 600;
+    color: #ffffff;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
+}
+
+#header .navbar li a:hover {
+    color: #fd7600;
+    border-bottom: 2px solid #fd7600;
+}
+
+#header .navbar .btn {
+    background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
+    color: white;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 50rem;
+}
+
+#header .navbar .btn:hover {
+    background: linear-gradient(to bottom, #ad2f87 0%, #2e2070 100%);
+}
+
 #one {
     background: linear-gradient(to right, rgb(75, 1, 72), rgb(25, 0, 20));
 }
@@ -8,6 +71,11 @@
 
 #three {
     background-color: rgb(175, 1, 170);
+
+}
+
+#three::placeholder {
+    color: white;
 }
 
 .Forecast {
@@ -74,19 +142,21 @@
 
 /* Define the fadeInUp keyframes */
 @keyframes fadeInUp {
+
     0% {
         opacity: 0;
-        /* Start as invisible */
+
         transform: translateY(15px);
-        /* Start 30px below */
+
     }
 
     100% {
         opacity: 1;
-        /* Fade in */
+
         transform: translateY(0);
-        /* Move to the original position */
+
     }
+
 }
 
 .card:hover #top,
@@ -145,7 +215,7 @@ button.btn-white:hover {
 
 .imagethree {
     width: 60px;
-    height: 90px;
+    height: 60px;
     animation: scale-animation 1s ease-in-out infinite;
 }
 
@@ -155,8 +225,11 @@ button.btn-white:hover {
 }
 
 #button {
-    width: 90px;
-    height: 60px;
+    display: inline-block;
+    text-align: start;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
     color: #fff;
     background-color: rgb(218, 110, 8);
     margin-top: 10px;
@@ -217,6 +290,7 @@ button.btn-white:hover {
     width: 800px;
     border: orangered 1px solid;
     position: relative;
+    padding-left: 10px;
 
 }
 
