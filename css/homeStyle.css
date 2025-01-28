@@ -25,7 +25,7 @@ body {
     background:
         linear-gradient(0deg, rgba(46, 32, 112, 0.9),
             rgba(46, 32, 112, 0.5)),
-        url('/images/landing_bg.webp') no-repeat;
+        url('../images/landing_bg.webp') no-repeat;
     background-size: cover;
 
 }
@@ -1027,7 +1027,7 @@ body {
 
 
 .footer-section {
-    background: linear-gradient(0deg, rgba(46, 32, 112, 0.9), rgba(46, 32, 112, 0.5)), url(images/Footer-bg.webp) no-repeat;
+    background: linear-gradient(0deg, rgba(46, 32, 112, 0.9), rgba(46, 32, 112, 0.5)), url("../images/Footer-bg.webp") no-repeat;
 
 }
 .footer-links{
