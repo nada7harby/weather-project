@@ -1,3 +1,55 @@
+.Contact {
+  color: rgb(184, 106, 5);
+}
+
+#header .navbar {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+#logo {
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.collapse {
+  width: fit-content;
+  flex-grow: 0;
+}
+
+#header .navbar li a {
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+}
+#header .navbar .navbar-nav {
+  margin-right: 0; /* Ensures no extra margin on the left */
+  margin-left: auto; /* Pushes links to the right */
+}
+#header .navbar li a:hover {
+  color: #fd7600;
+  border-bottom: 2px solid #fd7600;
+}
+
+#header .navbar .btn {
+  background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
+  color: white;
+  padding: 14px 30px;
+  font-size: 18px;
+  border-radius: 50rem;
+}
+
+#header .navbar .btn:hover {
+  background: linear-gradient(to bottom, #ad2f87 0%, #2e2070 100%);
+}
+
+#one {
+  background: linear-gradient(to right, rgb(75, 1, 72), rgb(25, 0, 20));
+}
 :root {
   --body-color: #ffffff;
   --primary-gradient: linear-gradient(to bottom, #ad2f87 0%, #2e2070 100%);
