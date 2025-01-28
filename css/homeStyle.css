@@ -934,7 +934,7 @@ body {
       rgba(46, 32, 112, 0.5)
     ),
     url("../images/Footer-bg.webp") no-repeat;
-  background-size: cover;
+    background-size: cover;
 }
 .footer-links {
   list-style: none;
