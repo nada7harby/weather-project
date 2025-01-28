@@ -241,7 +241,7 @@ ul li {
 
 .footer-section {
   background: linear-gradient(0deg, rgba(46, 32, 112, 0.9), rgba(46, 32, 112, 0.5)), url(../images/Footer-bg.webp) no-repeat;
-
+  background-size: cover;
 }
 
 .footer-link {

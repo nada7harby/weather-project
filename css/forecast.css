@@ -5,10 +5,12 @@
     margin-right: 100px;
     margin-bottom: 20px;
 }
-#logo{
+
+#logo {
     margin-left: 100px;
     margin-bottom: 20px;
 }
+
 .collapse {
     width: fit-content;
     flex-grow: 0;
@@ -48,6 +50,11 @@
 
 #three {
     background-color: rgb(175, 1, 170);
+
+}
+
+#three::placeholder {
+    color: white;
 }
 
 .Forecast {
@@ -114,19 +121,21 @@
 
 /* Define the fadeInUp keyframes */
 @keyframes fadeInUp {
+
     0% {
         opacity: 0;
-        /* Start as invisible */
+
         transform: translateY(15px);
-        /* Start 30px below */
+
     }
 
     100% {
         opacity: 1;
-        /* Fade in */
+
         transform: translateY(0);
-        /* Move to the original position */
+
     }
+
 }
 
 .card:hover #top,
@@ -185,7 +194,7 @@ button.btn-white:hover {
 
 .imagethree {
     width: 60px;
-    height: 90px;
+    height: 60px;
     animation: scale-animation 1s ease-in-out infinite;
 }
 
@@ -195,8 +204,11 @@ button.btn-white:hover {
 }
 
 #button {
-    width: 90px;
-    height: 60px;
+    display: inline-block;
+    text-align: start;
+   width: fit-content;
+   padding: 10px 20px;
+   border: none;
     color: #fff;
     background-color: rgb(218, 110, 8);
     margin-top: 10px;
