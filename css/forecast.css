@@ -1,3 +1,24 @@
+.btn-right {
+    top: 40%;
+    right: 0px;
+    transform: translateY(-50%);
+    padding: 20px 25px;
+    background: linear-gradient(to bottom, #FD7600 0%, #FFA805 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.btn-right i {
+    font-size: 22px;
+}
+
+.btn-right:hover {
+    background: linear-gradient(to bottom, #AD2F87 0%, #2E2070 100%);
+}
+
 #header .navbar {
     background: transparent;
     display: flex;
@@ -206,9 +227,9 @@ button.btn-white:hover {
 #button {
     display: inline-block;
     text-align: start;
-   width: fit-content;
-   padding: 10px 20px;
-   border: none;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
     color: #fff;
     background-color: rgb(218, 110, 8);
     margin-top: 10px;
