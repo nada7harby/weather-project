@@ -130,3 +130,37 @@ data.forEach((item) => {
   card.appendChild(image);
   swiperNews.appendChild(card);
 });
+
+const apiKey = "31b8d7e4ae5c4914bda173416252801";
+const city = "Cairo";
+
+// رابط API للطقس الحالي
+const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=ar`;
+
+// عنصر HTML لعرض بيانات الطقس
+const weatherInfoElement = document.getElementById("weather-info");
+
+// جلب بيانات الطقس من API
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    // استخراج البيانات المطلوبة
+    const temperature = data.current.temp_c;
+    const condition = data.current.condition.text;
+    const humidity = data.current.humidity;
+    const windSpeed = data.current.wind_kph;
+
+    // عرض البيانات في الصفحة
+    // weatherInfoElement.innerHTML = `
+    //                 الحالة: ${condition}<br>
+    //                 درجة الحرارة: ${temperature}°C<br>
+    //                 الرطوبة: ${humidity}%<br>
+    //                 سرعة الرياح: ${windSpeed} كم/ساعة
+    //             `;
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("حدث خطأ أثناء جلب البيانات:", error);
+    weatherInfoElement.innerText =
+      "فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.";
+  });
