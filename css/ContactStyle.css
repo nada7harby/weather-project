@@ -27,13 +27,15 @@
   background: transparent;
   display: flex;
   justify-content: space-between;
-  margin-right: 100px;
-  margin-bottom: 20px;
+  /* margin-right: 100px;
+  margin-bottom: 20px; */
 }
 
 #logo {
-  margin-left: 100px;
-  margin-bottom: 20px;
+  /* margin-left: 100px;
+  margin-bottom: 20px; */
+  width:80%;
+  padding-bottom: 20px;
 }
 
 .collapse {
