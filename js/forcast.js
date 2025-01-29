@@ -87,7 +87,7 @@ data.forEach((item) => {
 });
 
 const apiKey = "31b8d7e4ae5c4914bda173416252801"; // استبدل بمفتاح API الخاص بك
-const city = "Cairo"; // المدينة المطلوبة
+const city = "Asyut"; // المدينة المطلوبة
 const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&lang=ar`;
 
 const weatherForecastElement = document.getElementById("weather-forecast");
@@ -141,16 +141,6 @@ fetch(apiUrl)
       '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
   });
 
-//   <div class="col-md-3 mb-4">
-//   <div class="card rounded-4 shadow-sm">
-//       <div class="card-body text-center">
-//           <img src="${icon}" alt="${condition}" class="mb-3">
-//           <h5 class="card-title">${date}</h5>
-//           <p class="card-text">${condition}</p>
-//           <p class="card-text">${maxTemp}°C / ${minTemp}°C</p>
-//       </div>
-//   </div>
-// </div>
 
 const weatherForecastElementhour = document.getElementById(
   "weatherForecastElementhour"
@@ -160,43 +150,78 @@ const weatherForecastElementhour = document.getElementById(
 fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
-    const hourlyForecast = data.forecast.forecastday[0].hour; // بيانات كل ساعة لليوم الحالي
+    const current = data.current;
+    const forecast = data.forecast.forecastday[0]; 
+    const astro = forecast.astro; 
 
-    // عرض توقعات الطقس كل 4 ساعات
-    for (let i = 0; i < hourlyForecast.length; i += 4) {
-      const hourData = hourlyForecast[i];
-      const time = new Date(hourData.time).toLocaleTimeString("ar-EG", {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      const temp = hourData.temp_c;
-      const humidity = hourData.humidity;
-      const condition = hourData.condition.text.toLowerCase(); // حالة الطقس بأحرف صغيرة
-
-      // تحديد الصورة بناءً على حالة الطقس
-      let weatherImage = "images/weather-icon-1.png"; // الصورة الافتراضية (مشمس)
-      if (condition.includes("رياح") || condition.includes("windy")) {
-        weatherImage = "images/fi5.png"; // صورة الرياح
-      } else if (condition.includes("ممطر") || condition.includes("rain")) {
-        weatherImage = "images/fi5.png"; // صورة المطر
-      }
-
-      // إنشاء الهيكل لكل فترة
-      const card = `
+    // بيانات الرطوبة
+    const humidityCard = `
         <div class="col p-0">
           <div class="text-center fs-3 bold">
-            <p>${temp} &deg;c</p>
+            <p>${current.temp_c} &deg;c</p>
           </div>
-          <img src="${weatherImage}" class="imagethree" />
+          <img src="images/weather-icon-1.png" class="imagethree" />
           <div class="text-center fs-5">
-            <p>Humidity ${humidity}%</p>
+            <p>Humidity ${current.humidity}%</p>
           </div>
         </div>
       `;
 
-      // إضافة الهيكل إلى الصفحة
-      weatherForecastElementhour.innerHTML += card;
-    }
+    // بيانات الرياح
+    const windCard = `
+        <div class="col p-0">
+          <div class="text-center fs-3 bold">
+            <p>${current.temp_c} &deg;c</p>
+          </div>
+          <img src="images/weather-icon-2.png" class="imagethree" />
+          <div class="text-center fs-5">
+            <p>Wind: ${current.wind_kph} km/h ${current.wind_dir}</p>
+          </div>
+        </div>
+      `;
+
+    // بيانات فرصة هطول الأمطار
+    const chanceOfRainCard = `
+        <div class="col p-0">
+          <div class="text-center fs-3 bold">
+            <p>${current.temp_c} &deg;c</p>
+          </div>
+          <img src="images/weather-icon-3.png" class="imagethree" />
+          <div class="text-center fs-5">
+            <p>Chance of Rain ${forecast.day.daily_chance_of_rain}%</p>
+          </div>
+        </div>
+      `;
+
+    // بيانات شروق الشمس
+    const sunriseCard = `
+        <div class="col p-0">
+          <div class="text-center fs-3 bold">
+            <p>${current.temp_c} &deg;c</p>
+          </div>
+          <img src="images/weather-icon-4.png" class="imagethree" />
+          <div class="text-center fs-5">
+            <p>Sunrise ${astro.sunrise}</p>
+          </div>
+        </div>
+      `;
+
+    // بيانات غروب الشمس
+    const sunsetCard = `
+        <div class="col p-0">
+          <div class="text-center fs-3 bold">
+            <p>${current.temp_c} &deg;c</p>
+          </div>
+          <img src="images/weather-icon-5.png" class="imagethree" />
+          <div class="text-center fs-5">
+            <p>Sunset ${astro.sunset}</p>
+          </div>
+        </div>
+      `;
+
+    // إضافة جميع البطاقات إلى الصفحة
+    weatherForecastElementhour.innerHTML =
+      humidityCard + windCard + chanceOfRainCard + sunriseCard + sunsetCard;
   })
   .catch((error) => {
     console.error("حدث خطأ أثناء جلب البيانات:", error);
