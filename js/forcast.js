@@ -151,3 +151,55 @@ fetch(apiUrl)
 //       </div>
 //   </div>
 // </div>
+
+const weatherForecastElementhour = document.getElementById(
+  "weatherForecastElementhour"
+);
+
+// جلب بيانات الطقس
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    const hourlyForecast = data.forecast.forecastday[0].hour; // بيانات كل ساعة لليوم الحالي
+
+    // عرض توقعات الطقس كل 4 ساعات
+    for (let i = 0; i < hourlyForecast.length; i += 4) {
+      const hourData = hourlyForecast[i];
+      const time = new Date(hourData.time).toLocaleTimeString("ar-EG", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      const temp = hourData.temp_c;
+      const humidity = hourData.humidity;
+      const condition = hourData.condition.text.toLowerCase(); // حالة الطقس بأحرف صغيرة
+
+      // تحديد الصورة بناءً على حالة الطقس
+      let weatherImage = "images/weather-icon-1.png"; // الصورة الافتراضية (مشمس)
+      if (condition.includes("رياح") || condition.includes("windy")) {
+        weatherImage = "images/fi5.png"; // صورة الرياح
+      } else if (condition.includes("ممطر") || condition.includes("rain")) {
+        weatherImage = "images/fi5.png"; // صورة المطر
+      }
+
+      // إنشاء الهيكل لكل فترة
+      const card = `
+        <div class="col p-0">
+          <div class="text-center fs-3 bold">
+            <p>${temp} &deg;c</p>
+          </div>
+          <img src="${weatherImage}" class="imagethree" />
+          <div class="text-center fs-5">
+            <p>Humidity ${humidity}%</p>
+          </div>
+        </div>
+      `;
+
+      // إضافة الهيكل إلى الصفحة
+      weatherForecastElementhour.innerHTML += card;
+    }
+  })
+  .catch((error) => {
+    console.error("حدث خطأ أثناء جلب البيانات:", error);
+    weatherForecastElement.innerHTML =
+      '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
+  });
