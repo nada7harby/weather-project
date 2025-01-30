@@ -67,7 +67,8 @@ var articles;
 fetch(url)
 .then(response => response.json())
 .then(data => {
-  console.log(url)
+  console.log(data)
+
     articles = data.articles.slice(0,5);
     console.log(data.articles);
     const container = document.getElementById('news-container');
