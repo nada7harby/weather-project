@@ -103,7 +103,7 @@
 
     <div class="container">
       <div class="row my-5">
-        <div class="col-3">
+        <div class="col-lg-3">
           <div class="card rounded-4">
             <img src="images/weather-icon-1.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-lg-3">
           <div class="card rounded-4">
             <img src="images/weather-icon-2.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-lg-3">
           <div class="card rounded-4">
             <img src="images/weather-icon-3.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -148,7 +148,7 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-lg-3">
           <div class="card rounded-4">
             <img src="images/weather-icon-4.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -177,7 +177,6 @@
       <div class="d-flex justify-content-center align-items-center vh-10">
         <div class="dropdown w-50">
           <div class="input-group">
-            <!-- Search input with a dropdown toggle button -->
             <input
               id="three"
               type="text"
@@ -194,7 +193,6 @@
             >
               <span class="caret"></span>
             </button>
-            <!-- Dropdown menu -->
             <ul class="dropdown-menu w-100">
               <li><a class="dropdown-item" href="#">Select Location</a></li>
               <li><a class="dropdown-item" href="#">Location 1</a></li>
@@ -220,51 +218,15 @@
           </div>
 
           <div class="col-md-9 my-3">
-            <div class="rounded-4 p-4" id="card-2">
+            <div class="rounded-4 p-4" id="card-2" style="position: relative;">
               <div class="text-start">
                 <button id="button">Today</button>
               </div>
 
-              <p class="paragraph">25th Jan</p>
+              <p class="paragraph" id="dateToday">25th Jan</p>
               <hr />
               <div class="row p-0 m-0" id="weatherForecastElementhour">
-                <!-- <div class="col p-0">
-                  <div class="text-center fs-3 bold">
-                    <p>19 &deg;c</p>
-                  </div>
-                  <img src="images/weather-icon-1.png" class="imagethree" />
-                  <div class="text-center fs-5">
-                    <p>Humidity 65%</p>
-                  </div>
-                </div>
-                <div class="col p-0">
-                  <div class="text-center fs-3 bold">
-                    <p>20&deg; c</p>
-                  </div>
-                  <img src="images/weather-icon-2.png" class="imagethree" />
-                  <div class="text-center fs-5">
-                    <p>Wind:14km/h SW</p>
-                  </div>
-                </div>
-                <div class="col p-0">
-                  <div class="text-center fs-3 bold">
-                    <p>14&deg; c</p>
-                  </div>
-                  <img src="images/weather-icon-3.png" class="imagethree" />
-                  <div class="text-center fs-5">
-                    <p>Chance of Rain 10%</p>
-                  </div>
-                </div>
-                <div class="col p-0">
-                  <div class="text-center fs-3 bold">
-                    <p>21&deg; c</p>
-                  </div>
-                  <img src="images/weather-icon-4.png" class="imagethree" />
-                  <div class="text-center fs-5">
-                    <p>Sunrise 6:22AM</p>
-                  </div>
-                </div>
-                <div class="col p-0"> -->
+                
                   <div class="text-center fs-3 bold">
                     <p>29 &deg;c</p>
                   </div>
@@ -292,7 +254,7 @@
 
       <div class="container">
         <div class="row my-5 justify-content-center" id="weather-forecast">
-          <!-- <div class="col-3">
+          <!-- <div class="col-lg-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-1.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -305,7 +267,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-2.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -318,7 +280,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-3.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -331,7 +293,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-4.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -345,7 +307,7 @@
                 </div> -->
         </div>
         <!-- <div class="row" id="second">
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-5.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -358,7 +320,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-6.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -371,7 +333,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="card rounded-4">
                         <img src="images/weather-icon-1.png" class="image">
                         <div class="text-center fs-2 bold">
@@ -387,26 +349,31 @@
       </div>
     </div>
     <br /><br />
-    <div class="container">
-      <div class="row">
-        <div class="col-5">
-          <h1 id="head">
-            Subscribe Our News Letter<br />
-            For Weather Update
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nam
-            magni<br />
-            provident sapiente volaptate debitis perferendis modi error,A
-            deleniti<br />consectetur
-          </p>
-        </div>
-        <div class="col-7 my-5">
-          <input type="email" placeholder="Enter your Email" id="hamsh" />
-          <button id="ok">Subscribe</button>
+    <div class="container my-5">
+        <div class="row align-items-center">
+          <div class="col-lg-5 text-center text-lg-start mb-4 mb-lg-0">
+            <h1 id="head" class="mb-3">Subscribe Our Newsletter</h1>
+            <p class="mb-0">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nam magni<br />
+              provident sapiente volaptate debitis perferendis modi error, A deleniti<br />consectetur
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <form class="d-flex flex-column flex-lg-row gap-3" style="position: relative;">
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="Enter your Email"
+                aria-label="Enter your Email"
+                id="hamsh"
+              />
+              <button class="btn btn-primary btn-lg flex-shrink-0" type="submit" id="ok">
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     <section class="swiperNews" id="swiperNews">
       <div class="swiper mySwiper" id="mySwiper">
         <div class="swiper-wrapper" id="swiper-wrapper"></div>

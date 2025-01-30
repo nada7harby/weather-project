@@ -164,3 +164,5 @@ fetch(apiUrl)
     weatherInfoElement.innerText =
       "فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.";
   });
+
+  
