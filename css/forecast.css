@@ -19,6 +19,14 @@
   background: linear-gradient(to bottom, #ad2f87 0%, #2e2070 100%);
 }
 
+body {
+  background-color: white ; 
+  
+}
+body.dark-mode {
+  background-color: black;
+}
+
 #header .navbar {
   background: transparent;
   display: flex;
@@ -96,6 +104,7 @@
 }
 
 @keyframes scale-animation {
+
   0%,
   100% {
     transform: scale(1);
@@ -231,6 +240,7 @@ button.btn-white:hover {
 .navbar-toggler {
   background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
 }
+
 .rotating-image {
   height: auto;
   animation: rotate 10s linear infinite;
@@ -362,11 +372,9 @@ span {
 }
 
 .footer-section {
-  background: linear-gradient(
-      0deg,
+  background: linear-gradient(0deg,
       rgba(46, 32, 112, 0.9),
-      rgba(46, 32, 112, 0.5)
-    ),
+      rgba(46, 32, 112, 0.5)),
     url("../images/Footer-bg.webp") no-repeat;
   background-size: cover;
   margin-top: 30px;
@@ -460,22 +468,27 @@ a {
   .container {
     padding: 0 15px;
   }
+
   .card {
     width: 100%;
     margin-bottom: 20px;
   }
+
   #right,
   #end {
     display: none;
   }
+
   .paragraph {
     float: none;
     margin-right: 0;
     margin-top: 0;
   }
+
   #hamsh {
     width: 100%;
   }
+
   #ok {
     position: static;
     margin-left: 0;
@@ -487,7 +500,8 @@ a {
 .card {
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px; /* مسافة بين البطاقات */
+  margin-bottom: 20px;
+  /* مسافة بين البطاقات */
 }
 
 .card:hover {
@@ -510,10 +524,12 @@ a {
 }
 
 @keyframes scale-animation {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.2);
   }
