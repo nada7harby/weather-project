@@ -109,7 +109,7 @@ a {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.element {
+/* .element {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease-out;
@@ -118,7 +118,7 @@ a {
 .element-show {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 .tag {
   display: inline-block;
