@@ -162,6 +162,20 @@ function updateWeeklyWeather(forecastData) {
 
 
 
-// *************************************** display countries *****************************************
+// *************************************** go to top btn *****************************************
+let goTopBtn = document.getElementById("go-to-top");
+
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        goTopBtn.style.display = "flex"; 
+    } else {
+        goTopBtn.style.display = "none"; 
+    }
+};
+
+goTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 
