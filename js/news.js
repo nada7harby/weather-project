@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
     document.body.classList.remove('dark-mode');
     var isDark = localStorage.getItem('darkMode');
     if (isDark === 'true') {
         document.body.classList.add('dark-mode');
     }
-});
+};
 
 function toggledarkmode() {
     var body = document.body;
