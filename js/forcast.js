@@ -250,6 +250,7 @@ fetch(apiUrl)
       '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
   });
   window.onload = function () {
+    document.body.classList.remove('dark-mode');
     var isDark = localStorage.getItem('darkMode');
     if (isDark === 'true') {
       document.body.classList.add('dark-mode'); 
