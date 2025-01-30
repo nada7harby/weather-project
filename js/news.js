@@ -1,9 +1,9 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     var isDark = localStorage.getItem('darkMode');
     if (isDark === 'true') {
         document.body.classList.add('dark-mode');
     }
-};
+});
 
 function toggledarkmode() {
     var body = document.body;
