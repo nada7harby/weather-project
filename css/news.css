@@ -1,3 +1,11 @@
+body {
+    background-color: white;
+
+}
+
+body.dark-mode {
+    background-color: black;
+}
 
 .btn-right {
     top: 40%;
@@ -10,15 +18,16 @@
     border-radius: 5px;
     z-index: 1000;
     cursor: pointer;
-  }
-  
-  .btn-right i {
+}
+
+.btn-right i {
     font-size: 22px;
-  }
-  
-  .btn-right:hover {
+}
+
+.btn-right:hover {
     background: linear-gradient(to bottom, #AD2F87 0%, #2E2070 100%);
-  }
+}
+
 .News {
     color: rgb(184, 106, 5);
 }
@@ -29,17 +38,18 @@
     justify-content: space-between;
     /* margin-right: 100px;
     margin-bottom: 20px; */
-  }
-  .navbar-toggler{
+}
+
+.navbar-toggler {
     background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
-  }
-  
-  #logo {
+}
+
+#logo {
     /* margin-left: 100px;
     margin-bottom: 20px; */
     width: 80%;
     padding-bottom: 20px;
-  }
+}
 
 .collapse {
     width: fit-content;
@@ -52,10 +62,14 @@
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
         border-color 0.15s ease-in-out;
 }
+
 #header .navbar .navbar-nav {
-    margin-right: 0; /* Ensures no extra margin on the left */
-    margin-left: auto; /* Pushes links to the right */
+    margin-right: 0;
+    /* Ensures no extra margin on the left */
+    margin-left: auto;
+    /* Pushes links to the right */
 }
+
 #header .navbar li a:hover {
     color: #fd7600;
     border-bottom: 2px solid #fd7600;
@@ -154,6 +168,7 @@ p {
 .divone .cont-link .first {
     color: #FD7600;
 }
+
 .footer-section {
     background: linear-gradient(0deg, rgba(46, 32, 112, 0.9), rgba(46, 32, 112, 0.5)), url("../images/Footer-bg.webp") no-repeat;
     background-size: cover;

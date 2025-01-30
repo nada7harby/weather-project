@@ -249,19 +249,20 @@ fetch(apiUrl)
     weatherForecastElement.innerHTML =
       '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
   });
-window.onload = function () {
-  document.body.classList.remove('dark-mode');
-  var isDark = localStorage.getItem('darkMode');
-  if (isDark === 'true')
-    document.body.classList.add('dark-mode');
-
-
-}
-function toggledarkmode() {
-  var body = document.body;
-  body.classList.toggle('dark-mode');
-  if (body.classList.contains('dark-mode'))
-    localStorage.setItem('darkMode', 'true');
-  else
-    localStorage.removeItem('darkMode');
-}
+  window.onload = function () {
+    var isDark = localStorage.getItem('darkMode');
+    if (isDark === 'true') {
+      document.body.classList.add('dark-mode'); 
+    }
+  };
+  
+  function toggledarkmode() {
+    var body = document.body;
+    body.classList.toggle('dark-mode');
+  
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'true'); 
+    } else {
+      localStorage.removeItem('darkMode');
+    }
+  }

@@ -19,7 +19,7 @@
     <title>News</title>
 </head>
 
-<body>
+<body class="dark-mode">
     <main>
         <header id="header">
 
@@ -345,7 +345,7 @@
         </div>
 
     </main>
-    <div class="btn-right position-fixed">
+    <div class="btn-right position-fixed" onclick="toggledarkmode()">
         <i class="fa-solid fa-moon"></i>
     </div>
     <footer class="footer-section ">
@@ -392,8 +392,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+
         AOS.init();
     </script>
+    <script src="js/news.js"></script>
 </body>
 
 </html>
