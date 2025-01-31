@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Application</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- css file -->
+  <link rel="stylesheet" href="css/homeStyle.css" />
+</head>
+
+<body>
+  <!-- header -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img src="./images/logo.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forecast.html">Forecast</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="climateChange.html">Climate Change</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <button class="btn">Subscribe</button>
+        </div>
+      </nav>
+
+      <div id="landing  ">
+        <div class="content py-5 d-flex flex-wrap justify-content-between align-items-center">
+          <div class="left col-lg-5 col-md-5 col-sm-5">
+            <span>Weather & Forecast</span>
+            <h1>Sunshine or Storm, We’ve Got You Covered!</h1>
+            <p>
+              It is a long established fact that a reader will be distracted
+              by the readable content of a page when looking at its layout.
+            </p>
+            <button>Read More</button>
+          </div>
+
+          <div class="right col-lg-5 col-md-5 col-sm-5">
+            <div class="img-box">
+              <img src="./images/side-img.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3"></use>
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0"></use>
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9"></use>
+      </g>
+    </svg>
+  </header>
+
+  <!-- main -->
+  <main>
+    <!-- aboutUs section -->
+    <section id="aboutUs" class="py-5">
+      <div class="container">
+        <div class="content">
+          <div class="left">
+            <h4>About</h4>
+            <h2>Sunshine or Storm, We’ve Got You Covered!</h2>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the have suffered alteration in some form, by injected
+              humour.
+            </p>
+
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humour, or randomised words which don't look even
+              slightly believable.
+            </p>
+
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the have suffered alteration in some form, by injected
+              humour.
+            </p>
+            <button>Read More</button>
+          </div>
+          <div class="right">
+            <div class="box">
+              <div class="img1">
+                <img src="./images/img1.webp" />
+              </div>
+              <div class="img">
+                <img src="./images/img2.webp" />
+              </div>
+              <div class="img">
+                <img src="./images/img3.webp" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- forecast section -->
+    <section id="forecast" class="py-5 my-5">
+      <div class="container">
+        <img src="./images/f1.png" class="f1" />
+
+        <div class="top text-center mb-5">
+          <h2>Today's Weather Forecast</h2>
+          <p>Select your location to get real-time weather updates.</p>
+          <form>
+            <select name="city" id="city" class="active">
+              <option>Select City</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="content p-5 row">
+          <div class="left col-lg-2 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-between">
+            <img src="./images/f2.png" class="sun" />
+            <h2 id="currentTemp">30°C</h2>
+            <p id="currentCond">Sunny and Clear</p>
+          </div>
+
+          <div class="right col-lg-9 col-md-12 col-sm-12">
+            <div class="date d-flex align-items-center justify-content-between">
+              <span class="p-3">Today</span>
+              <p id="today">25th Jan</p>
+            </div>
+
+            <div class="data d-flex flex-wrap align-items-center justify-content-between text-center py-3 mt-4">
+              <div class="item px-2 text-center">
+                <h4></h4>
+                <img src="./images/fi1.png" class="my-2" />
+                <p id="humidity">Humidity: ...</p>
+              </div>
+              <div class="item px-2 text-center">
+                <h4></h4>
+                <img src="./images/fi2.png" class="my-2" />
+                <p id="wind">Wind: ...</p>
+              </div>
+              <div class="item px-2 text-center">
+                <h4></h4>
+                <img src="./images/fi3.png" class="my-2" />
+                <p id="rain">Chance of Rain: ...</p>
+              </div>
+              <div class="item px-2 text-center">
+                <h4></h4>
+                <img src="./images/fi4.png" class="my-2" />
+                <p id="sunrise">Sunrise: ...</p>
+              </div>
+              <div class="item px-2 text-center">
+                <h4></h4>
+                <img src="./images/fi5.png" class="my-2" />
+                <p id="sunset">Sunset: ...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <img src="./images/f1.png" class="f2" />
+      </div>
+    </section>
+
+    <!-- history section -->
+    <section id="history" class="py-5 my-5">
+      <div class="container">
+        <div class="section-title py-3 text-center">
+          <h2>Weekly Weather History</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
+            dolores.
+          </p>
+        </div>
+
+        <div class="content row py-5 d-flex flex-wrap justify-content-center" id="weekly-weather">
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi1.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi2.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi3.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi4.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi5.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <div class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light">
+            <img src="./images/fi6.png" />
+            <h4>12°C -2°C</h4>
+            <h4>Mon</h4>
+          </div>
+
+          <!-- <div class="item  d-flex flex-column justify-content-between align-items-center   p-4">
+                        <img src="./images/fi1.png" />
+                        <h4>12°C -2°C</h4>
+                        <h4>Mon</h4>
+                    </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- weather section -->
+    <section id="weather" class="py-5 my-5">
+      <div class="container">
+        <div class="section-title py-3 text-center">
+          <h2>Recent Search Weather</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
+            dolores.
+          </p>
+        </div>
+
+        <div class="content row">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/w1.webp" alt="Slide 1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w2.webp" alt="Slide 2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w3.webp" alt="Slide 3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w4.webp" alt="Slide 4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w1.webp" alt="Slide 5" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w2.webp" alt="Slide 2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w3.webp" alt="Slide 3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/w4.webp" alt="Slide 4" />
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- country section -->
+    <section id="country" class="py-5 my-5">
+      <div class="container">
+        <div class="section-title py-3 text-center">
+          <h2>Top Weather Forecast</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
+            dolores.
+          </p>
+        </div>
+
+        <div class="content row py-5 d-flex flex-wrap justify-content-between align-items-center">
+          <div class="item">
+            <div class="box m-auto">
+              <a  href="#forecast"><img src="./images/flag1.png" /></a>
+            </div>
+            <h3>Canada</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <a  href="#forecast"><img src="./images/flag2.png" /></a>
+            </div>
+            <h3>Germany</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <a  href="#forecast"><img src="./images/flag3.png" /></a>
+            </div>
+            <h3>Ireland</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <a  href="#forecast"><img src="./images/flag4.png" /></a>
+            </div>
+            <h3>USA</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <a  href="#forecast"><img src="./images/flag5.png" /></a>
+            </div>
+            <h3>Egypt</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <img src="./images/flag6.png" />
+            </div>
+            <h3>Nepal</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <img src="./images/flag7.png" />
+            </div>
+            <h3>India</h3>
+          </div>
+
+          <div class="item">
+            <div class="box m-auto">
+              <img src="./images/flag8.png" />
+            </div>
+            <h3>UK</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- highlight section -->
+    <section id="highlight" class="py-5 my-5">
+      <div class="section-title py-3 text-center">
+        <h2>Weather Highlights</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
+          dolores.
+        </p>
+      </div>
+
+      <div class="content p-5 d-flex flex-wrap justify-content-between align-items-center">
+        <div class="card">
+          <img class="card-img-top" src="./images/h1.webp" />
+          <div class="card-body">
+            <h5 class="card-title">Tips for Preparing for Monsoon</h5>
+            <p class="card-text">By Sarah Lee • October 10, 2024</p>
+            <p class="card-text">
+              Discover how climate change impacts our world and what steps can
+              be taken to mitigate its effects.
+            </p>
+            <a href="#" class="btn">Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="./images/h2.webp" />
+          <div class="card-body">
+            <h5 class="card-title">Tips for Preparing for Monsoon</h5>
+            <p class="card-text">By Sarah Lee • October 10, 2024</p>
+            <p class="card-text">
+              Discover how climate change impacts our world and what steps can
+              be taken to mitigate its effects.
+            </p>
+            <a href="#" class="btn">Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="./images/h3.webp" />
+          <div class="card-body">
+            <h5 class="card-title">Tips for Preparing for Monsoon</h5>
+            <p class="card-text">By Sarah Lee • October 10, 2024</p>
+            <p class="card-text">
+              Discover how climate change impacts our world and what steps can
+              be taken to mitigate its effects.
+            </p>
+            <a href="#" class="btn">Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact" class="py-5 my-5">
+      <div class="container">
+        <img src="./images/f1.png" class="f1" />
+
+        <h2 class="title py-3 text-center">
+          Stay Connected with the Weather, <br />
+          Stay Prepared!
+        </h2>
+
+        <div class="content py-5 d-flex flex-wrap justify-content-between align-items-center">
+          <div class="left col-lg-3 col-md-12 col-sm-12">
+            <div class="box d-flex my-3">
+              <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="text">
+                <h4>Location</h4>
+                <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+              </div>
+            </div>
+
+            <div class="box d-flex my-3">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="text">
+                <h4>Phone Number</h4>
+                <p>(704) 555-0137</p>
+                <p>(704) 555-0852</p>
+              </div>
+            </div>
+
+            <div class="box d-flex my-3">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="text">
+                <h4>Email</h4>
+                <p>info@example.com</p>
+                <p>example@example.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="right col-lg-7 col-md-12 col-sm-12 p-5 rounded-5">
+            <h4>Leave us a Message</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Cupiditate iusto dolor magni voluptas. Libero dolore deserunt
+              corrupti expedita necessitatibus
+            </p>
+            <form>
+              <div class="input-box">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" />
+              </div>
+
+              <div class="input-box">
+                <label>Email</label>
+                <input type="text" placeholder="Enter your email" />
+              </div>
+
+              <div class="input-box">
+                <label>Phone</label>
+                <input type="text" placeholder="Enter your phone" />
+              </div>
+
+              <div class="input-box">
+                <label>Subject</label>
+                <input type="text" placeholder="Enter your subject" />
+              </div>
+
+              <div class="input-box d-block w-100">
+                <label>Message</label>
+                <textarea type="text"> Enter your message ... </textarea>
+              </div>
+
+              <button>Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <img src="./images/f1.png" class="f2" />
+      </div>
+    </section>
+
+    <!-- news section -->
+    <section id="news" class="py-5 my-5">
+      <div class="container">
+        <div class="content py-5 d-flex flex-wrap justify-content-between align-items-center">
+          <div class="left col-lg-5 col-md-12 col-sm-12 d-flex flex-column justify-content-between align-items-start">
+            <h2>Subscribe Our News letter For Weather Update</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+              nam magni provident sapiente voluptate debitis perferendis modi
+              error, a deleniti consectetur.
+            </p>
+          </div>
+          <div class="right col-lg-6 col-md-12 col-sm-12">
+            <form>
+              <div class="input-box">
+                <input type="email" placeholder="Enter Your Email" />
+                <button>Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/n1.webp" alt="Slide 1" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n2.webp" alt="Slide 2" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n3.webp" alt="Slide 3" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n4.webp" alt="Slide 4" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n5.webp" alt="Slide 5" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n1.webp" alt="Slide 1" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n2.webp" alt="Slide 2" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n3.webp" alt="Slide 3" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n4.webp" alt="Slide 4" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/n5.webp" alt="Slide 5" />
+              <div class="overlay">
+                <h3>New York City</h3>
+                <p>Jan-23-2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <div class="btn-right position-fixed" onclick="toggledarkmode()">
+      <i class="fa-solid fa-moon"></i>
+    </div>
+    <!-- footer section -->
+    <footer class="footer-section">
+      <div class="container py-5">
+        <div class="text-center">
+          <div class="logo-footer py-4">
+            <img src="./images/logo.png" alt="" />
+          </div>
+          <div class="row">
+            <ul class="footer-links d-flex flex-wrap gap-5 align-items-center justify-content-center">
+              <li><a href="" class="text-white text-uppercase">Home</a></li>
+              <li><a href="" class="text-white text-uppercase">about</a></li>
+              <li><a href="" class="text-white text-uppercase">news</a></li>
+              <li>
+                <a href="" class="text-white text-uppercase">forecast</a>
+              </li>
+              <li>
+                <a href="" class="text-white text-uppercase">climate change</a>
+              </li>
+              <li>
+                <a href="" class="text-white text-uppercase">contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex gap-3 align-items-center justify-content-center pt-3">
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="text-center last-section p-3">
+      <p class="text-white m-0 p-0">
+        ©
+        <span>2025</span>
+        WeatherMate All Rights Reserved.
+      </p>
+    </div>
+
+    <div id="go-to-top">
+      <a> <i class="fa-solid fa-chevron-up"></i> </a>
+    </div>
+  </main>
+  
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- swiper slider -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- js -->
+  <script src="js/main.js"></script>
+
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4, // عدد الصور اللي تظهر
+      spaceBetween: 8, // المسافة بين الصور
+      loop: true, // التنقل دائري
+      autoplay: {
+        delay: 2000, // يتحرك تلقائي كل ثانيتين
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
+    });
+    window.onload = function () {
+      document.body.classList.remove('dark-mode');
+      var isDark = localStorage.getItem('darkMode');
+      if (isDark === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    };
+
+    function toggledarkmode() {
+      var body = document.body;
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        localStorage.removeItem('darkMode');
+      }
+    }
+  </script>
+</body>
+
+</html>
