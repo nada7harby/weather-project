@@ -1,3 +1,13 @@
+body {
+    background-color: white;
+
+}
+
+body.dark-mode {
+    background-color: black;
+    color: #6b6b6b;
+}
+
 * {
     margin: 0;
     padding: 0;
