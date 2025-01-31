@@ -23,10 +23,7 @@ body {
   background-color: white ; 
   
 }
-body.dark-mode {
-  background-color: black;
-  color: #6b6b6b;
-}
+
 
 #header .navbar {
   background: transparent;

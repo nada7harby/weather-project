@@ -380,23 +380,39 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         window.onload = function () {
-            document.body.classList.remove('dark-mode');
-            var isDark = localStorage.getItem('darkMode');
-            if (isDark === 'true') {
-                document.body.classList.add('dark-mode');
-            }
-        };
+    // Ensure default background is white
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black"; 
 
-        function toggledarkmode() {
-            var body = document.body;
-            body.classList.toggle('dark-mode');
+    var isDark = localStorage.getItem('darkMode');
+    if (isDark === 'true') {
+        enableDarkMode();
+    }
+};
 
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'true');
-            } else {
-                localStorage.removeItem('darkMode');
-            }
-        }
+function toggledarkmode() {
+    var body = document.body;
+    if (body.classList.contains('dark-mode')) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "#6b6b6b";  
+    localStorage.setItem('darkMode', 'true');
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black"; 
+    localStorage.removeItem('darkMode');
+}
+
         AOS.init({
             once: true
         });

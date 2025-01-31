@@ -164,23 +164,36 @@ fetch(apiUrl)
     weatherInfoElement.innerText =
       "فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.";
   });
-  window.onload = function () {
-    document.body.classList.remove('dark-mode');
-    var isDark = localStorage.getItem('darkMode');
-    if (isDark === 'true') {
-      document.body.classList.add('dark-mode'); 
-    }
-  };
-  
-  function toggledarkmode() {
-    var body = document.body;
-    body.classList.toggle('dark-mode');
-  
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('darkMode', 'true'); 
-    } else {
-      localStorage.removeItem('darkMode');
-    }
-  }
+window.onload = function () {
+  // Ensure default background is white
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
 
-  
+  var isDark = localStorage.getItem('darkMode');
+  if (isDark === 'true') {
+    enableDarkMode();
+  }
+};
+
+function toggledarkmode() {
+  var isDark = localStorage.getItem('darkMode');
+  if (isDark === 'true') {
+    disableDarkMode();
+  } else {
+    enableDarkMode();
+  }
+}
+
+function enableDarkMode() {
+  document.body.classList.add('dark-mode');
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "#6b6b6b";
+  localStorage.setItem('darkMode', 'true');
+}
+
+function disableDarkMode() {
+  document.body.classList.remove('dark-mode');
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
+  localStorage.removeItem('darkMode');
+}

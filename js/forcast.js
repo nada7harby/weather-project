@@ -250,20 +250,36 @@ fetch(apiUrl)
       '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
   });
   window.onload = function () {
-    document.body.classList.remove('dark-mode');
+    
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black"; 
+
     var isDark = localStorage.getItem('darkMode');
     if (isDark === 'true') {
-      document.body.classList.add('dark-mode'); 
+        enableDarkMode();
     }
-  };
-  
-  function toggledarkmode() {
-    var body = document.body;
-    body.classList.toggle('dark-mode');
-  
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('darkMode', 'true'); 
-    } else {
-      localStorage.removeItem('darkMode');
-    }
+};
+
+function toggledarkmode() {
+  var isDark = localStorage.getItem('darkMode'); 
+  if (isDark === 'true') {
+      disableDarkMode();
+  } else {
+      enableDarkMode();
   }
+
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "#6b6b6b";  
+    localStorage.setItem('darkMode', 'true');
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    document.body.style.backgroundColor = "white";
+    document.body.style.color = "black"; 
+    localStorage.removeItem('darkMode');
+}
