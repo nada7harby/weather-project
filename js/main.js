@@ -13,42 +13,115 @@ todayPara.innerHTML = today;
 
 
 
-// ******************************* handle select city **************************************
+// // ******************************* handle select city **************************************
+
+// const citiesUrl = "https://countriesnow.space/api/v0.1/countries"; 
+
+
+// const selectCity = document.getElementById("city");
+
+
+// // fetch cities and display it
+// fetch(citiesUrl).then(res => res.json()).then(data => {
+//   // console.log(data.data);
+//   data.data.forEach(element => {
+    
+//     if(element.country === 'Egypt'){
+//       // console.log(element);
+//       console.log(element.cities);
+
+//       element.cities.forEach(city => {
+//         // console.log(city);
+//         const option = document.createElement('option');
+//         option.textContent = city;
+
+//         selectCity.appendChild(option);
+//       })
+//     }
+//   });
+
+// }).catch(err => console.log("there is error : ",err));
+
+
+
+
+// // city that user will select
+// selectCity.addEventListener("change", (event) => {
+
+//   const selectedCity = event.target.value;       // new city the user selected
+  
+//   if (selectedCity !== "Select City") {
+//     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`;
+
+//     fetch(weatherUrl)
+//       .then(response => {
+//         if (!response.ok) {
+//           throw new Error("City weather data not found!");
+//         }
+//         return response.json();
+//       })
+//       .then(data => {
+
+//         updateWeatherUI(data);
+//       })
+//       .catch(error => console.error("Error fetching weather:", error));
+//   }
+// });
+
+
+
 
 const citiesUrl = "https://countriesnow.space/api/v0.1/countries"; 
-
-
 const selectCity = document.getElementById("city");
+const countryLinks = document.querySelectorAll('.item a'); 
+
+let countriesData = [];
 
 
-// fetch cities and display it
-fetch(citiesUrl).then(res => res.json()).then(data => {
-  // console.log(data.data);
-  data.data.forEach(element => {
-    
-    if(element.country === 'Egypt'){
-      // console.log(element);
-      console.log(element.cities);
+fetch(citiesUrl)
+  .then(res => res.json())
+  .then(data => {
+    countriesData = data.data; 
+  })
+  .catch(err => console.log("هناك خطأ: ", err));
 
-      element.cities.forEach(city => {
-        // console.log(city);
-        const option = document.createElement('option');
-        option.textContent = city;
 
-        selectCity.appendChild(option);
-      })
-    }
+
+function updateCities(countryName) {
+  selectCity.innerHTML = `<option>Select City</option>`; 
+
+  const country = countriesData.find(c => c.country.toLowerCase() === countryName.toLowerCase());
+
+  console.log("country =====>");
+  console.log(country);
+
+
+  if (country) {
+    country.cities.forEach(city => {
+      const option = document.createElement('option');
+      option.textContent = city;
+      selectCity.appendChild(option);
+    });
+  }
+}
+
+
+
+countryLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const countryName = link.getAttribute('data-country'); 
+    updateCities(countryName);
+
+    document.getElementById("forecast").scrollIntoView({ behavior: "smooth" });
   });
-
-}).catch(err => console.log("there is error : ",err));
-
+});
 
 
 
-// city that user will select
+
 selectCity.addEventListener("change", (event) => {
-
-  const selectedCity = event.target.value;       // new city the user selected
+  const selectedCity = event.target.value;    
   
   if (selectedCity !== "Select City") {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`;
@@ -61,12 +134,13 @@ selectCity.addEventListener("change", (event) => {
         return response.json();
       })
       .then(data => {
-
         updateWeatherUI(data);
       })
       .catch(error => console.error("Error fetching weather:", error));
   }
 });
+
+
 
 
 // display data in ui
