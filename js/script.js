@@ -62,13 +62,14 @@ new Chart(ctx, {
 
 const apiKey = 'b12959edcb9b40828f7ea8ae43ce86bb'; 
 const query = 'weather'; 
-const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&language=en&pageSize=10`;
+const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&language=en&pageSize=14`;
 var articles;
-fetch(url)
+
+fetch("/data.json")
 .then(response => response.json())
 .then(data => {
-  console.log(data)
-
+    console.log(data)
+    console.log(url)
     articles = data.articles.slice(0,5);
     console.log(data.articles);
     const container = document.getElementById('news-container');
@@ -88,15 +89,15 @@ fetch(url)
       document.getElementById('news-container').appendChild(articleHTML);
     });
     const readMoreLinks = document.querySelectorAll('.read-more');
-readMoreLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    localStorage.setItem('blogTitle', link.getAttribute('data-title'));
-    localStorage.setItem('blogContent', link.getAttribute('data-content'));
-    localStorage.setItem('blogImage', link.getAttribute('data-image'));
-    window.location.href = 'blog.html';
-  });
-});
+    readMoreLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.setItem('blogTitle', link.getAttribute('data-title'));
+        localStorage.setItem('blogContent', link.getAttribute('data-content'));
+        localStorage.setItem('blogImage', link.getAttribute('data-image'));
+        window.location.href = 'blog.html';
+      });
+    });
     var blogs = data.articles.slice(6,8);
     var blogsUnder = data.articles.slice(8,10);
     blogs.forEach(blog => {
@@ -123,7 +124,6 @@ readMoreLinks.forEach(link => {
                         </div>
       `
       document.getElementById('blog-posts').appendChild(blogHtml);
-
     })
 
     const imgPost = document.querySelectorAll('.imgPost');
@@ -148,7 +148,7 @@ readMoreLinks.forEach(link => {
       blogsHtml2.classList.add('blog-post' , 'py-3', 'd-flex', 'gap-3');
       blogsHtml2.innerHTML = `
        <div style="max-width : 150px; max-height : 150px;" class="blog-img">
-                           <a style="cursor : pointer;"  data-title="${blogUnder.title}" data-content="${blogUnder.content}" data-image="${blogUnder.urlToImage}"  class=" blogPost">
+                          <a   href="#">
                               <img  src="${blogUnder.urlToImage}" alt="" class="img-fluid rounded-2 w-100">
                           </a>
                         </div>
@@ -252,3 +252,24 @@ function disableDarkMode() {
     document.body.style.color = "black"; 
     localStorage.removeItem('darkMode');
 }
+// function saveBlogData(ele) {
+//   // const img = document.querySelector(`a[href="blog.html"] img[data-title][data-content]`);
+  
+//   // if (img) {
+//   //     localStorage.setItem("blogImage", img.src);
+//   //     localStorage.setItem("blogTitle", img.getAttribute("data-title"));
+//   //     localStorage.setItem("blogContent", img.getAttribute("data-content"));
+//   // }
+//   // event.preventDefault();
+//   console.log(ele);
+//   var img = ele.querySelector('.img-data');
+//   const imageUrl = img.src;
+//   const title = img.getAttribute('data-title');
+//   const content = img.getAttribute('data-content');
+
+//   console.log("Image URL:", imageUrl);
+//   console.log("Title:", title);
+//   console.log("Content:", content);
+
+//   localStorage.setItem()
+// }
