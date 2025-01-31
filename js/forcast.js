@@ -177,7 +177,7 @@ fetch(apiUrl)
 
     // بيانات الرطوبة
     const humidityCard = `
-        <div class="col p-0">
+        <div class="col-lg-4 col-12  p-2">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -190,7 +190,7 @@ fetch(apiUrl)
 
     // بيانات الرياح
     const windCard = `
-        <div class="col p-0">
+        <div class="col-lg-4 col-12 p-2">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -203,7 +203,7 @@ fetch(apiUrl)
 
     // بيانات فرصة هطول الأمطار
     const chanceOfRainCard = `
-        <div class="col p-0">
+        <div class="col-lg-4 col-12 p-2">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -216,7 +216,7 @@ fetch(apiUrl)
 
     // بيانات شروق الشمس
     const sunriseCard = `
-        <div class="col p-0">
+        <div class="col-lg-4 col-12 p-2">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -229,7 +229,7 @@ fetch(apiUrl)
 
     // بيانات غروب الشمس
     const sunsetCard = `
-        <div class="col p-0">
+        <div class="col-lg-4 col-12 p-2">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
