@@ -68,9 +68,9 @@ var articles;
 fetch("/data.json")
 .then(response => response.json())
 .then(data => {
-    console.log(data)
-    console.log(url)
-    articles = data.articles.slice(0,5);
+  console.log(data)
+
+    articles = data.articles.slice(1,6);
     console.log(data.articles);
     const container = document.getElementById('news-container');
       articles.forEach(article => {

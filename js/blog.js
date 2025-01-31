@@ -27,7 +27,7 @@ fetch(url)
       blogHtml.classList.add('blog-post' , 'py-3', 'd-flex', 'gap-3');
       blogHtml.innerHTML = `
        <div style="max-width : 100px; max-height : 100px;" class="blog-img">
-                          <a   href="#">
+                         <a style="cursor : pointer;"  data-title="${blog.title}" data-content="${blog.content}" data-image="${blog.urlToImage}"  class=" blogPost">
                               <img  src="${blog.urlToImage}" alt="" class="img-fluid rounded-2 w-100">
                           </a>
                         </div>
@@ -46,9 +46,10 @@ fetch(url)
       document.getElementById('blog-posts').appendChild(blogHtml);
   
     })
-    const readMoreLinks = document.querySelectorAll('.read-more');
-    readMoreLinks.forEach(link => {
+    const blogPost = document.querySelectorAll('.blogPost');
+    blogPost.forEach(link => {
       link.addEventListener('click', function(e) {
+        console.log(link)
         e.preventDefault();
         localStorage.setItem('blogTitle', link.getAttribute('data-title'));
         localStorage.setItem('blogContent', link.getAttribute('data-content'));
