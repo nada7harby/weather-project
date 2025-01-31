@@ -106,8 +106,8 @@ readMoreLinks.forEach(link => {
       blogHtml.classList.add('blog-post' , 'py-3', 'd-flex', 'gap-3');
       blogHtml.innerHTML = `
        <div style="max-width : 150px; max-height : 150px;" class="blog-img">
-                          <a   href="#">
-                              <img  src="${blog.urlToImage}" alt="" class="img-fluid rounded-2 w-100">
+                          <a style="cursor : pointer;"  data-title="${blog.title}" data-content="${blog.content}" data-image="${blog.urlToImage}"  class=" imgPost">
+                              <img  src="${blog.urlToImage}" alt="" class="img-fluid rounded-2 w-100 imgPost">
                           </a>
                         </div>
                         <div class="blog-details">
@@ -125,6 +125,20 @@ readMoreLinks.forEach(link => {
       document.getElementById('blog-posts').appendChild(blogHtml);
 
     })
+
+    const imgPost = document.querySelectorAll('.imgPost');
+    imgPost.forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log(link)
+        e.preventDefault();
+        localStorage.setItem('blogTitle', link.getAttribute('data-title'));
+        localStorage.setItem('blogContent', link.getAttribute('data-content'));
+        localStorage.setItem('blogImage', link.getAttribute('data-image'));
+        window.location.href = 'blog.html';
+      });
+    });
+
+
     blogsUnder.forEach(blogUnder => {
       console.log(blogUnder)
       // console.log(this)
@@ -134,7 +148,7 @@ readMoreLinks.forEach(link => {
       blogsHtml2.classList.add('blog-post' , 'py-3', 'd-flex', 'gap-3');
       blogsHtml2.innerHTML = `
        <div style="max-width : 150px; max-height : 150px;" class="blog-img">
-                          <a   href="#">
+                           <a style="cursor : pointer;"  data-title="${blogUnder.title}" data-content="${blogUnder.content}" data-image="${blogUnder.urlToImage}"  class=" blogPost">
                               <img  src="${blogUnder.urlToImage}" alt="" class="img-fluid rounded-2 w-100">
                           </a>
                         </div>
@@ -153,6 +167,22 @@ readMoreLinks.forEach(link => {
       
       document.getElementById('blog-posts-under').appendChild(blogsHtml2);
     })
+
+
+
+    const blogPost = document.querySelectorAll('.blogPost');
+    blogPost.forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log(link)
+        e.preventDefault();
+        localStorage.setItem('blogTitle', link.getAttribute('data-title'));
+        localStorage.setItem('blogContent', link.getAttribute('data-content'));
+        localStorage.setItem('blogImage', link.getAttribute('data-image'));
+        window.location.href = 'blog.html';
+      });
+    });
+
+
     //  articles.forEach(article => {
     //   const articleHTML = `
     //   <div class="element common-watcher gap-3 d-flex flex-column flex-sm-row py-4">
