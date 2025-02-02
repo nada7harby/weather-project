@@ -461,7 +461,9 @@ body {
     border-radius: 1rem;
 
 }
-
+.navbar-toggler {
+    background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
+  }
 #forecast .content .left .sun {
     animation: rotate-smooth 9s linear infinite;
     padding: 20px;

@@ -239,6 +239,19 @@ button.btn-white:hover {
   background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
 }
 
+#forecast .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+#forecast .content .left,
+#forecast .content .right {
+  background: linear-gradient(to bottom, rgba(62, 45, 143), rgba(157, 82, 172, 0.7));
+  border-radius: 1rem;
+
+}
 .rotating-image {
   height: auto;
   animation: rotate 10s linear infinite;

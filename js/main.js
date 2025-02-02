@@ -36,89 +36,48 @@ todayPara.innerHTML = today;
 // }).catch(err => console.log("there is error : ",err));
 
 // // city that user will select
-// selectCity.addEventListener("change", (event) => {
-
-//   const selectedCity = event.target.value;       // new city the user selected
-
-//   if (selectedCity !== "Select City") {
-//     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`;
-
-//     fetch(weatherUrl)
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error("City weather data not found!");
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-
-//         updateWeatherUI(data);
-//       })
-//       .catch(error => console.error("Error fetching weather:", error));
-//   }
-// });
-
-const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
-const selectCity = document.getElementById("city");
-const countryLinks = document.querySelectorAll(".item a");
-
-let countriesData = [];
-
-fetch(citiesUrl)
-  .then((res) => res.json())
-  .then((data) => {
-    countriesData = data.data;
-  })
-  .catch((err) => console.log("هناك خطأ: ", err));
-
-function updateCities(countryName) {
-  selectCity.innerHTML = `<option>Select City</option>`;
-
-  const country = countriesData.find(
-    (c) => c.country.toLowerCase() === countryName.toLowerCase()
-  );
-
-  console.log("country =====>");
-  console.log(country);
-
-  if (country) {
-    country.cities.forEach((city) => {
-      const option = document.createElement("option");
-      option.textContent = city;
-      selectCity.appendChild(option);
-    });
-  }
-}
-
-countryLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const countryName = link.getAttribute("data-country");
-    updateCities(countryName);
-
-    document.getElementById("forecast").scrollIntoView({ behavior: "smooth" });
-  });
-});
-
 selectCity.addEventListener("change", (event) => {
-  const selectedCity = event.target.value;
+
+  const selectedCity = event.target.value;       // new city the user selected
 
   if (selectedCity !== "Select City") {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`;
 
     fetch(weatherUrl)
-      .then((response) => {
+      .then(response => {
         if (!response.ok) {
           throw new Error("City weather data not found!");
         }
         return response.json();
       })
-      .then((data) => {
+      .then(data => {
+
         updateWeatherUI(data);
       })
-      .catch((error) => console.error("Error fetching weather:", error));
+      .catch(error => console.error("Error fetching weather:", error));
   }
 });
+
+const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
+const selectCity = document.getElementById("city");
+
+fetch(citiesUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    const countriesData = data.data;
+
+    // مسح الخيارات الحالية في القائمة المنسدلة
+    selectCity.innerHTML = `<option>Select City</option>`;
+
+    // إضافة أسماء البلدان كخيارات في القائمة المنسدلة
+    countriesData.forEach((country) => {
+      const option = document.createElement("option");
+      option.textContent = country.country; // اسم البلد
+      option.value = country.country; // قيمة البلد
+      selectCity.appendChild(option);
+    });
+  })
+  .catch((err) => console.log("هناك خطأ: ", err));
 
 // display data in ui
 function updateWeatherUI(data) {
@@ -268,7 +227,6 @@ fetch(url)
         window.location.href = "blog.html";
       });
     });
-    
   })
   .catch((error) => console.error("Error:", error));
 window.onload = function () {
