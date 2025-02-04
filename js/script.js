@@ -296,7 +296,7 @@ const query = "weather";
 const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&language=en&pageSize=14`;
 var articles;
 
-fetch(".0./data.json")
+fetch("../data.json")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
