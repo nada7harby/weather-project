@@ -296,7 +296,7 @@ const query = "weather";
 const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}&language=en&pageSize=14`;
 var articles;
 
-fetch("../data.json")
+fetch(".0./data.json")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -426,9 +426,143 @@ fetch("../data.json")
       });
     });
   })
-  .catch((error) => console.error("Error:", error));
+  .catch((error) => {
+    console.error("Error:", error);
+
+    articles = dataNews.articles.slice(1, 6);
+    console.log(data.articles);
+    const container = document.getElementById("news-container");
+    articles.forEach((article) => {
+      const articleHTML = document.createElement("div");
+      articleHTML.classList.add(
+        "element",
+        "common-watcher",
+        "gap-3",
+        "d-flex",
+        "flex-column",
+        "flex-sm-row",
+        "py-4"
+      );
+      articleHTML.innerHTML = `
+        <figure style="max-width: 200px;">
+          <img class="rounded w-100" src="${article.urlToImage}" alt="">
+        </figure>
+        <div class="img-info">
+          <h4 class="move-head fw-bold">${article.title}</h4>
+          <p>${article.description}</p>
+          <a style="cursor : pointer;" data-title="${article.title}" data-content="${article.content}" data-image="${article.urlToImage}"  class="move-head fw-bold read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      `;
+      document.getElementById("news-container").appendChild(articleHTML);
+    });
+    const readMoreLinks = document.querySelectorAll(".read-more");
+    readMoreLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.setItem("blogTitle", link.getAttribute("data-title"));
+        localStorage.setItem("blogContent", link.getAttribute("data-content"));
+        localStorage.setItem("blogImage", link.getAttribute("data-image"));
+        window.location.href = "blog.html";
+      });
+    });
+    var blogs = dataNews.articles.slice(6, 8);
+    var blogsUnder = dataNews.articles.slice(8, 10);
+    blogs.forEach((blog) => {
+      const blogHtml = document.createElement("div");
+      const isoDate = blog.publishedAt;
+      const normalDate = new Date(isoDate).toLocaleDateString();
+      blogHtml.classList.add("blog-post", "py-3", "d-flex", "gap-3");
+      blogHtml.innerHTML = `
+       <div style="max-width : 150px; max-height : 150px;" class="blog-img" data-title="${
+         blog.title
+       }" data-content="${blog.content}" data-image="${blog.urlToImage}" >
+                          <a style="cursor : pointer;"  data-title="${
+                            blog.title
+                          }" data-content="${blog.content}" data-image="${
+        blog.urlToImage
+      }"  class=" imgPost">
+                              <img  src="${
+                                blog.urlToImage
+                              }" alt="" class="img-fluid rounded-2 w-100 imgPost">
+                          </a>
+                        </div>
+                        <div class="blog-details">
+                          <h5 class="move-head fw-semibold small">
+                              ${blog.title}
+                          </h5>
+                          <p class="grey-text small m-0">
+                              ${normalDate}
+                          </p>
+                          <p class="grey-text small m-0">
+                              ${blog.content.slice(0, 50)}
+                          </p>
+                        </div>
+      `;
+      document.getElementById("blog-posts").appendChild(blogHtml);
+    });
+
+    const imgPost = document.querySelectorAll(".imgPost");
+    imgPost.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        console.log(link);
+        e.preventDefault();
+        localStorage.setItem("blogTitle", link.getAttribute("data-title"));
+        localStorage.setItem("blogContent", link.getAttribute("data-content"));
+        localStorage.setItem("blogImage", link.getAttribute("data-image"));
+        window.location.href = "blog.html";
+      });
+    });
+
+    blogsUnder.forEach((blogUnder) => {
+      console.log(blogUnder);
+      // console.log(this)
+      const blogsHtml2 = document.createElement("div");
+      const isoDate = blogUnder.publishedAt;
+      const normalDate = new Date(isoDate).toLocaleDateString();
+      blogsHtml2.classList.add("blog-post", "py-3", "d-flex", "gap-3");
+      blogsHtml2.innerHTML = `
+       <div style="max-width : 150px; max-height : 150px;" class="blog-img" data-title="${
+         blogUnder.title
+       }" data-content="${blogUnder.content}" data-image="${
+        blogUnder.urlToImage
+      }" >
+                          <a   href="#">
+                              <img  src="${
+                                blogUnder.urlToImage
+                              }" alt="" class="img-fluid rounded-2 w-100">
+                          </a>
+                        </div>
+                        <div class="blog-details">
+                          <h5 class="move-head fw-semibold small">
+                              ${blogUnder.title}
+                          </h5>
+                          <p class="grey-text small m-0">
+                              ${normalDate}
+                          </p>
+                          <p class="grey-text small m-0">
+                              ${blogUnder.content.slice(0, 50)}
+                          </p>
+                        </div>
+      `;
+
+      document.getElementById("blog-posts-under").appendChild(blogsHtml2);
+    });
+
+    const blogPost = document.querySelectorAll(".blog-img");
+    blogPost.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        console.log(link);
+        e.preventDefault();
+        localStorage.setItem("blogTitle", link.getAttribute("data-title"));
+        localStorage.setItem("blogContent", link.getAttribute("data-content"));
+        localStorage.setItem("blogImage", link.getAttribute("data-image"));
+        window.location.href = "blog.html";
+      });
+    });
+  });
 window.onload = function () {
   // Ensure default background is white
+
   document.body.style.backgroundColor = "white";
   document.body.style.color = "black";
 

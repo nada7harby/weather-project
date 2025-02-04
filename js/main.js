@@ -288,10 +288,7 @@ fetch(apiUrl)
 
       // إنشاء بطاقة لكل يوم
       const card = `
-       
-
-
-                   <div
+               <div
               class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
             >
               <img src="${weatherImage}" />
