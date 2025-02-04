@@ -97,9 +97,10 @@ fetch(apiUrl)
   .then((response) => response.json())
   .then((data) => {
     const forecastDays = data.forecast.forecastday;
-
+var delay=100;
     // عرض توقعات الطقس لكل يوم
     forecastDays.forEach((day) => {
+      
       const date = new Date(day.date).toLocaleDateString("en-US", {
         weekday: "long",
       });
@@ -117,7 +118,7 @@ fetch(apiUrl)
 
       // إنشاء بطاقة لكل يوم
       const card = `
-          <div class="col-lg-3 mt-3">
+          <div class="col-lg-3 mt-3" data-aos="fade-up" data-aos-delay=${delay}>
                     <div class="card rounded-4">
                         <img src="${weatherImage}" class="image">
                         <div class="text-center fs-2 bold">
@@ -133,6 +134,7 @@ fetch(apiUrl)
 
       // إضافة البطاقة إلى الصفحة
       weatherForecastElement.innerHTML += card;
+      delay+=200;
     });
   })
   .catch((error) => {
@@ -177,7 +179,7 @@ fetch(apiUrl)
 
     // بيانات الرطوبة
     const humidityCard = `
-        <div class="col-lg-4 col-12  p-2">
+        <div class="col-lg-4 col-12  p-2" data-aos="fade-up" data-aos-delay="100">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -190,7 +192,7 @@ fetch(apiUrl)
 
     // بيانات الرياح
     const windCard = `
-        <div class="col-lg-4 col-12 p-2">
+        <div class="col-lg-4 col-12 p-2" data-aos="fade-up" data-aos-delay="300">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -203,7 +205,7 @@ fetch(apiUrl)
 
     // بيانات فرصة هطول الأمطار
     const chanceOfRainCard = `
-        <div class="col-lg-4 col-12 p-2">
+        <div class="col-lg-4 col-12 p-2" data-aos="fade-up" data-aos-delay="500">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -216,7 +218,7 @@ fetch(apiUrl)
 
     // بيانات شروق الشمس
     const sunriseCard = `
-        <div class="col-lg-4 col-12 p-2">
+        <div class="col-lg-4 col-12 p-2" data-aos="fade-up" data-aos-delay="700">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>
@@ -229,7 +231,7 @@ fetch(apiUrl)
 
     // بيانات غروب الشمس
     const sunsetCard = `
-        <div class="col-lg-4 col-12 p-2">
+        <div class="col-lg-4 col-12 p-2" data-aos="fade-up" data-aos-delay="1400">
           <div class="text-center fs-3 bold">
             <p>${current.temp_c} &deg;c</p>
           </div>

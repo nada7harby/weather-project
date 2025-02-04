@@ -127,7 +127,7 @@
     <!-- main -->
     <main>
       <!-- aboutUs section -->
-      <section id="aboutUs" class="py-5">
+      <section id="aboutUs" class="py-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <div class="content">
             <div class="left">
@@ -171,7 +171,7 @@
       </section>
 
       <!-- forecast section -->
-      <section id="forecast" class="py-5 my-5">
+      <section id="forecast" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <img src="./images/f1.png" class="f1" />
 
@@ -185,50 +185,67 @@
             </form>
           </div>
 
-          <div class="content p-5 row">
-            <div
-              class="left col-lg-2 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-between"
-            >
-              <img src="./images/f2.png" class="sun" />
-              <h2 id="currentTemp">30°C</h2>
-              <p id="currentCond">Sunny and Clear</p>
+          <div class="content p-3 p-lg-5 row">
+            <!-- الجزء الأيسر -->
+            <div class="left col-lg-2 col-md-12 col-sm-12 d-flex flex-column align-items-center justify-content-between mb-4 mb-lg-0">
+              <img src="./images/f2.png" class="sun img-fluid" alt="Sun Icon" />
+              <h2 id="currentTemp" class="text-center">30°C</h2>
+              <p id="currentCond" class="text-center">Sunny and Clear</p>
             </div>
-
+          
+            <!-- الجزء الأيمن -->
             <div class="right col-lg-9 col-md-12 col-sm-12">
-              <div
-                class="date d-flex align-items-center justify-content-between"
-              >
-                <span class="p-3">Today</span>
-                <p id="today">25th Jan</p>
+              <!-- التاريخ -->
+              <div class="date d-flex align-items-center justify-content-between mb-3">
+                <span class="p-2 p-lg-3">Today</span>
+                <p id="today" class="mb-0"></p>
               </div>
-
-              <div
-                class="data d-flex flex-wrap align-items-center justify-content-between text-center py-3 mt-4"
-              >
-                <div class="item px-2 text-center">
-                  <h4></h4>
-                  <img src="./images/fi1.png" class="my-2" />
-                  <p id="humidity">Humidity: ...</p>
+          
+              <!-- البيانات -->
+              <div class="data row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 text-center">
+                <!-- الرطوبة -->
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="item p-2">
+                    <h4></h4>
+                    <img src="./images/fi1.png" class="img-fluid my-2" alt="Humidity Icon" />
+                    <p id="humidity" class="mb-0">Humidity: ...</p>
+                  </div>
                 </div>
-                <div class="item px-2 text-center">
-                  <h4></h4>
-                  <img src="./images/fi2.png" class="my-2" />
-                  <p id="wind">Wind: ...</p>
+          
+                <!-- الرياح -->
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="item p-2">
+                    <h4></h4>
+                    <img src="./images/fi5.png" class="img-fluid my-2" alt="Wind Icon" />
+                    <p id="wind" class="mb-0">Wind: ...</p>
+                  </div>
                 </div>
-                <div class="item px-2 text-center">
-                  <h4></h4>
-                  <img src="./images/fi3.png" class="my-2" />
-                  <p id="rain">Chance of Rain: ...</p>
+          
+                <!-- فرصة المطر -->
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="item p-2">
+                    <h4></h4>
+                    <img src="./images/fi2.png" class="img-fluid my-2" alt="Rain Icon" />
+                    <p id="rain" class="mb-0">Chance of Rain: ...</p>
+                  </div>
                 </div>
-                <div class="item px-2 text-center">
-                  <h4></h4>
-                  <img src="./images/fi4.png" class="my-2" />
-                  <p id="sunrise">Sunrise: ...</p>
+          
+                <!-- شروق الشمس -->
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="item p-2">
+                    <h4></h4>
+                    <img src="./images/fi4.png" class="img-fluid my-2" alt="Sunrise Icon" />
+                    <p id="sunrise" class="mb-0">Sunrise: ...</p>
+                  </div>
                 </div>
-                <div class="item px-2 text-center">
-                  <h4></h4>
-                  <img src="./images/fi5.png" class="my-2" />
-                  <p id="sunset">Sunset: ...</p>
+          
+                <!-- غروب الشمس -->
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="item p-2">
+                    <h4></h4>
+                    <img src="./images/fi3.png" class="img-fluid my-2" alt="Sunset Icon" />
+                    <p id="sunset" class="mb-0">Sunset: ...</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -239,7 +256,7 @@
       </section>
 
       <!-- history section -->
-      <section id="history" class="py-5 my-5">
+      <section id="history" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <div class="section-title py-3 text-center">
             <h2>Weekly Weather History</h2>
@@ -251,67 +268,15 @@
 
           <div
             class="content row py-5 d-flex flex-wrap justify-content-center"
-            id="weekly-weather"
+            id="weather-forecast"
           >
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi1.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi2.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi3.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi4.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi5.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <div
-              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
-            >
-              <img src="./images/fi6.png" />
-              <h4>12°C -2°C</h4>
-              <h4>Mon</h4>
-            </div>
-
-            <!-- <div class="item  d-flex flex-column justify-content-between align-items-center   p-4">
-                        <img src="./images/fi1.png" />
-                        <h4>12°C -2°C</h4>
-                        <h4>Mon</h4>
-                    </div> -->
+         
           </div>
         </div>
       </section>
 
       <!-- weather section -->
-      <section id="weather" class="py-5 my-5">
+      <section id="weather" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <div class="section-title py-3 text-center">
             <h2>Recent Search Weather</h2>
@@ -358,7 +323,7 @@
       </section>
 
       <!-- country section -->
-      <section id="country" class="py-5 my-5">
+      <section id="country" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <div class="section-title py-3 text-center">
             <h2>Top Weather Forecast</h2>
@@ -447,7 +412,7 @@
       </section>
 
       <!-- highlight section -->
-      <section id="highlight" class="py-5 my-5">
+      <section id="highlight" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="section-title py-3 text-center">
           <h2>Weather Highlights</h2>
           <p>
@@ -507,7 +472,7 @@
       </section>
 
       <!-- contact section -->
-      <section id="contact" class="py-5 my-5">
+      <section id="contact" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <img src="./images/f1.png" class="f1" />
 
@@ -555,22 +520,22 @@
                 corrupti expedita necessitatibus
               </p>
               <form>
-                <div class="input-box">
+                <div class="input-box w-50 p-1">
                   <label>Name</label>
                   <input type="text" placeholder="Enter your name" />
                 </div>
 
-                <div class="input-box">
+                <div class="input-box w-50 p-1">
                   <label>Email</label>
                   <input type="text" placeholder="Enter your email" />
                 </div>
 
-                <div class="input-box">
+                <div class="input-box w-50 p-1">
                   <label>Phone</label>
                   <input type="text" placeholder="Enter your phone" />
                 </div>
 
-                <div class="input-box">
+                <div class="input-box w-50 p-1">
                   <label>Subject</label>
                   <input type="text" placeholder="Enter your subject" />
                 </div>
@@ -590,7 +555,7 @@
       </section>
 
       <!-- news section -->
-      <section id="news" class="py-5 my-5">
+      <section id="news" class="py-5 my-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <div
             class="content py-5 d-flex flex-wrap justify-content-between align-items-center"
@@ -835,6 +800,11 @@
         document.body.style.color = "black";
         localStorage.removeItem("darkMode");
       }
+
+      AOS.init({
+        duration: 1200, // مدة التأثير بالمللي ثانية
+        once: true, // التأثير يعمل مرة واحدة فقط
+      });
     </script>
   </body>
 </html>

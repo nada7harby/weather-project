@@ -124,7 +124,7 @@ fetch("/data.json")
         newsRow_3.appendChild(parentDiv);
     });
 
-    news = data.articles.slice(10,13);
+    news = data.articles.slice(9,12);
     news.forEach(oneNews => {
         console.log(oneNews);
         var parentDiv = document.createElement('div');

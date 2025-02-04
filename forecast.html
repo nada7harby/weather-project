@@ -29,7 +29,7 @@
   <body class="dark-mode">
     <header id="header">
       <div>
-        <div class="container-fluid py-5" id="one">
+        <div class="container-fluid " id="one" style="padding-bottom: 5rem">
           <div class="breadcrumb_section text-center">
             <div class="breadcrumb_title text-center">
               <nav class="navbar navbar-expand-lg">
@@ -103,9 +103,9 @@
       </p>
     </div>
 
-    <div class="container">
+    <div class="container" >
       <div class="row my-5">
-        <div class="col-lg-3">
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
           <div class="card rounded-4">
             <img src="images/weather-icon-1.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -120,7 +120,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
           <div class="card rounded-4">
             <img src="images/weather-icon-2.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -135,7 +135,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="600">
           <div class="card rounded-4">
             <img src="images/weather-icon-3.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -150,7 +150,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="1000">
           <div class="card rounded-4">
             <img src="images/weather-icon-4.png" class="image" />
             <div class="text-center fs-2 bold">
@@ -179,7 +179,7 @@
       <div class="d-flex justify-content-center align-items-center vh-10">
         <div class="w-50">
           <select class="form-select" id="city" aria-label="Select Location" name="city" >
-            <!-- <option selected>Select City </option> -->
+            <option selected>Select City </option>
           </select>
         </div>
       </div>
@@ -332,14 +332,14 @@
     <br /><br />
     <div class="container my-5">
         <div class="row align-items-center">
-          <div class="col-lg-5 text-center text-lg-start mb-4 mb-lg-0">
+          <div class="col-lg-5 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <h1 id="head" class="mb-3">Subscribe Our Newsletter</h1>
             <p class="mb-0">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nam magni<br />
               provident sapiente volaptate debitis perferendis modi error, A deleniti<br />consectetur
             </p>
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
             <form class="d-flex flex-column flex-lg-row gap-3" style="position: relative;">
               <input
                 type="email"
@@ -355,7 +355,7 @@
           </div>
         </div>
       </div>
-    <section class="swiperNews" id="swiperNews">
+    <section class="swiperNews" id="swiperNews" data-aos="flip-up" data-aos-delay="200">
       <div class="swiper mySwiper" id="mySwiper">
         <div class="swiper-wrapper" id="swiper-wrapper"></div>
         <div class="swiper-pagination"></div>
@@ -365,7 +365,7 @@
     <div class="btn-right position-fixed" onclick="toggledarkmode()">
       <i class="fa-solid fa-moon"></i>
     </div>
-    <footer class="footer-section">
+    <footer class="footer-section" data-aos="fade-up" data-aos-delay="200">
       <div class="container py-5">
         <div class="text-center">
           <div class="logo-footer py-4">
@@ -414,6 +414,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/forcast.js"></script>
-  
+    <script>
+      AOS.init({
+        duration: 1200, // مدة التأثير بالمللي ثانية
+        once: true, // التأثير يعمل مرة واحدة فقط
+      });
+    </script>
   </body>
 </html>

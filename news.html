@@ -1,438 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/news.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/news.css" />
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>News</title>
-</head>
+  </head>
 
-<body class="dark-mode">
+  <body class="dark-mode">
     <main>
-        <header id="header">
+      <header id="header">
+        <div>
+          <div class="container-fluid" id="one" style="padding-bottom: 5rem">
+            <div class="breadcrumb_section text-center">
+              <div class="breadcrumb_title text-center">
+                <nav class="navbar navbar-expand-lg">
+                  <a class="navbar-brand" href="#">
+                    <img src="./images/logo.png" id="logo" />
+                  </a>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
 
-            <div>
-                <div class="container-fluid py-5 " id="one">
-                    <div class="breadcrumb_section text-center ">
-                        <div class="breadcrumb_title text-center">
-                            <nav class="navbar navbar-expand-lg">
-                                <a class="navbar-brand" href="#">
-                                    <img src="./images/logo.png" id="logo" />
-                                </a>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
+                  <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                  >
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                      </li>
 
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav mr-auto">
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="index.html">Home</a>
-                                        </li>
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="forecast.html">Forecast</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="climateChange.html">Climate Change</a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="news.html">News</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">Contact Us</a>
-                                        </li>
-                                    </ul>
-                                    <button class="btn">Subscribe</button>
-                                </div>
-                            </nav>
-                            <h1 class="text-white fw-bold">News</h1>
-                        </div>
-
-                    </div>
-                    <ul class="d-flex justify-content-center align-items-center py-4 gap-3 list-unstyled">
-                        <li class="fs-4 text-white">
-                            <a href="index.html" style="text-decoration: none;">Home</a>
-                        </li>
-                        <li class="text-white">|</li>
-                        <li>
-                            <span class="News fs-4">News</span>
-                        </li>
-
+                      <li class="nav-item">
+                        <a class="nav-link" href="forecast.html">Forecast</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="climateChange.html"
+                          >Climate Change</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                      </li>
                     </ul>
-                </div>
+                    <button class="btn">Subscribe</button>
+                  </div>
+                </nav>
+                <h1 class="text-white fw-bold">News</h1>
+              </div>
             </div>
-        </header>
-
-        <div class="album py-5 ">
-            <div class="container">
-                <div class="text-cont">
-                    <h2 class="head-text mb-5" style="text-align:center;">Weather Highlights</h2>
-                    <!-- <p class="card-text" style="text-align: center;padding-bottom: 3em;">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit Bibendum cursus </p> -->
-                </div>
-                    <div id="news-row-1" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                    <!-- <div class="col" data-aos="fade-up" data-aos-delay="50" data-aos-once="true"
-                        data-aos-anchor=".container">
-                        <div class="card shadow-sm main-card">
-                            <img src="images/1.jpg" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Weather Updates You Should Know</a>
-                                <p>By John Doe • October 17, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a  href="${article.urlToImage
-    //           }" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="200"
-                            data-aos-once="true" data-aos-anchor=".container">
-                            <img src="images/2.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Tips for Preparing for Monsoon</a>
-                                <p>By Sarah Lee • October 10, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="350">
-                            <img src="images/3.jpg" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">How Weather Affects Mood</a>
-                                <p>By Emma Watson • September 29, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    
-
-                </div>
-            </div>
+            <ul
+              class="d-flex justify-content-center align-items-center py-4 gap-3 list-unstyled"
+            >
+              <li class="fs-4 text-white">
+                <a href="index.html" style="text-decoration: none">Home</a>
+              </li>
+              <li class="text-white">|</li>
+              <li>
+                <span class="News fs-4">News</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="album py-5 ">
-            <div class="container">
-                <h2 class="head-text mb-5" data-aos="fade-up" data-aos-delay="500">Around the Weather News</h2>
-                <div id="news-row-2" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-<!-- 
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="650">
-                            <img src="images/4.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Global Weather Events</a>
-                                <p>By John Doe • September 28, 2024</p>
-                                <p class="card-text">Stay ahead of weather changes with our latest insights and updates
-                                    on weather patterns around.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
+      </header>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="800">
-                            <img src="images/5.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Climate Change Reports</a>
-                                <p>By Sarah Lee • September 27, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="950">
-                            <img src="images/6.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Regional Forecast Highlights</a>
-                                <p>By Emma Watson • September 29, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-
-                </div>
-            </div>
+      <div class="album py-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+          <div class="text-cont">
+            <h2 class="head-text mb-5" style="text-align: center">
+              Weather Highlights
+            </h2>
+          </div>
+          <div
+            id="news-row-1"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+          ></div>
         </div>
-        <div class="album py-5 ">
-            <div class="container">
-                <h2 class="head-text  mb-5" data-aos="fade-up" data-aos-delay="1100">Viral Weather News</h2>
-                <div id="news-row-3" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                    <!-- <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="1250">
-                            <img src="images/7.jpg" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Record-Breaking Heatwaves</a>
-                                <p>By John Doe • October 17, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="1400">
-                            <img src="images/8.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Unexpected Rainfall Trends</a>
-                                <p>By Sarah Lee • October 10, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="1550">
-                            <img src="images/9.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Sudden Snowstorms</a>
-                                <p>By Emma Watson • September 29, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-
-                </div>
-            </div>
+      </div>
+      <div class="album py-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+          <h2 class="head-text mb-5" data-aos="fade-up" data-aos-delay="500">
+            Around the Weather News
+          </h2>
+          <div
+            id="news-row-2"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+          ></div>
         </div>
-        <div class="album py-5 ">
-            <div class="container">
-                <h2 class="head-text  mb-5" data-aos="fade-up" data-aos-delay="1700">Space and Astronomy</h2>
-                <div id="news-row-4" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                    <!-- <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="1850">
-                            <img src="images/10.jpg" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Black Hole Merger Detected</a>
-                                <p>By John Doe • October 17, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="2000">
-                            <img src="images/11.webp" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">Black Hole Merger Detected</a>
-                                <p>By Sarah Lee • October 10, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm main-card" data-aos="fade-up" data-aos-delay="2150">
-                            <img src="images/12.avif" alt="ggg" width="100%" height="225">
-                            <div class="card-body">
-                                <a href="#" class="main-links">New Exoplanet Discovereds</a>
-                                <p>By Emma Watson • September 29, 2024</p>
-                                <p class="card-text"> Discover how climate change impacts our world and what steps can
-                                    be taken to mitigate its effects.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="main-links">Read More <i
-                                                class="fa-solid fa-arrow-right"></i></a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-
-                </div>
-            </div>
+      </div>
+      <div class="album py-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+          <h2 class="head-text mb-5" data-aos="fade-up" data-aos-delay="1100">
+            Viral Weather News
+          </h2>
+          <div
+            id="news-row-3"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+          ></div>
         </div>
-
+      </div>
+      <div class="album py-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+          <h2 class="head-text mb-5" data-aos="fade-up" data-aos-delay="1700">
+            Space and Astronomy
+          </h2>
+          <div
+            id="news-row-4"
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+          ></div>
+        </div>
+      </div>
     </main>
     <div class="btn-right position-fixed" onclick="toggledarkmode()">
-        <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-moon"></i>
     </div>
-    <footer class="footer-section ">
-        <div class="container py-5 ">
-            <div class="text-center">
-                <div class="logo-footer py-4">
-                    <img src="images/logo.png" alt="">
-                </div>
-                <div class="row">
-                    <ul class="footer-links d-flex flex-wrap gap-5 align-items-center justify-content-center">
-                        <li><a href="" class="text-white text-uppercase">Home</a></li>
-                        <li><a href="" class="text-white text-uppercase">about</a></li>
-                        <li><a href="" class="text-white text-uppercase">news</a></li>
-                        <li><a href="" class="text-white text-uppercase">forecast</a></li>
-                        <li><a href="" class="text-white text-uppercase">climate change</a></li>
-                        <li><a href="" class="text-white text-uppercase">contact</a></li>
-                    </ul>
-
-                </div>
-                <div class="d-flex gap-3 align-items-center justify-content-center pt-3">
-                    <a href="#" class="footer-link">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="footer-link">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" class="footer-link">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                    <a href="#" class="footer-link">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
+    <footer class="footer-section" data-aos="fade-up" data-aos-delay="200">
+      <div class="container py-5">
+        <div class="text-center">
+          <div class="logo-footer py-4">
+            <img src="images/logo.png" alt="" />
+          </div>
+          <div class="row">
+            <ul
+              class="footer-links d-flex flex-wrap gap-5 align-items-center justify-content-center"
+            >
+              <li><a href="" class="text-white text-uppercase">Home</a></li>
+              <li><a href="" class="text-white text-uppercase">about</a></li>
+              <li><a href="" class="text-white text-uppercase">news</a></li>
+              <li><a href="" class="text-white text-uppercase">forecast</a></li>
+              <li>
+                <a href="" class="text-white text-uppercase">climate change</a>
+              </li>
+              <li><a href="" class="text-white text-uppercase">contact</a></li>
+            </ul>
+          </div>
+          <div
+            class="d-flex gap-3 align-items-center justify-content-center pt-3"
+          >
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="footer-link">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </footer>
     <div class="text-center last-section p-3">
-        <p class="text-white m-0 p-0">
-            ©
-            <span>2025</span>
-            WeatherMate All Rights Reserved.
-        </p>
+      <p class="text-white m-0 p-0">
+        ©
+        <span>2025</span>
+        WeatherMate All Rights Reserved.
+      </p>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+      AOS.init();
+      window.onload = function () {
+        // Ensure default background is white
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
 
-        AOS.init();
-        window.onload = function () {
-            // Ensure default background is white
-            document.body.style.backgroundColor = "white";
-            document.body.style.color = "black";
-
-            var isDark = localStorage.getItem('darkMode');
-            if (isDark === 'true') {
-                enableDarkMode();
-            }
-        };
-
-        function toggledarkmode() {
-            var isDark = localStorage.getItem('darkMode');
-            if (isDark === 'true') {
-                disableDarkMode();
-            } else {
-                enableDarkMode();
-            }
+        var isDark = localStorage.getItem("darkMode");
+        if (isDark === "true") {
+          enableDarkMode();
         }
+      };
 
-        function enableDarkMode() {
-            document.body.classList.add('dark-mode');
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "#6b6b6b";
-            localStorage.setItem('darkMode', 'true');
+      function toggledarkmode() {
+        var isDark = localStorage.getItem("darkMode");
+        if (isDark === "true") {
+          disableDarkMode();
+        } else {
+          enableDarkMode();
         }
+      }
 
-        function disableDarkMode() {
-            document.body.classList.remove('dark-mode');
-            document.body.style.backgroundColor = "white";
-            document.body.style.color = "black";
-            localStorage.removeItem('darkMode');
-        }
+      function enableDarkMode() {
+        document.body.classList.add("dark-mode");
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "#6b6b6b";
+        localStorage.setItem("darkMode", "true");
+      }
 
+      function disableDarkMode() {
+        document.body.classList.remove("dark-mode");
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        localStorage.removeItem("darkMode");
+      }
+
+      AOS.init({
+        duration: 1200,
+        once: true,
+      });
     </script>
     <script src="js/news.js"></script>
-</body>
-
+  </body>
 </html>

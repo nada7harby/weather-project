@@ -2,84 +2,101 @@
 const apiKey = "887e6bbe201889ebca380d3b230f07cd";
 
 // ******************************* get today date (in right side) **************************************
-const today = new Date().toLocaleDateString();
-const todayPara = document.getElementById("today");
 
-console.log(today);
-todayPara.innerHTML = today;
+const getOrdinalSuffix = (day) => {
+  if (day > 3 && day < 21) return "th";
+  switch (day % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+};
+
+const today = new Date();
+const day = today.getDate();
+const month = today.toLocaleString("en-GB", { month: "short" });
+
+const formattedDate = `${day}${getOrdinalSuffix(day)} ${month}`;
+document.getElementById("today").innerHTML = formattedDate;
+
+// todayPara.innerHTML = formattedDate;
 
 // // ******************************* handle select city **************************************
 
-// const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
+const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
 
-// const selectCity = document.getElementById("city");
+const selectCity = document.getElementById("city");
 
-// // fetch cities and display it
-// fetch(citiesUrl).then(res => res.json()).then(data => {
-//   // console.log(data.data);
-//   data.data.forEach(element => {
+// fetch cities and display it
+fetch(citiesUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    // console.log(data.data);
+    data.data.forEach((element) => {
+      if (element.country === "Egypt") {
+        // console.log(element);
+        console.log(element.cities);
 
-//     if(element.country === 'Egypt'){
-//       // console.log(element);
-//       console.log(element.cities);
+        element.cities.forEach((city) => {
+          // console.log(city);
+          const option = document.createElement("option");
+          option.textContent = city;
 
-//       element.cities.forEach(city => {
-//         // console.log(city);
-//         const option = document.createElement('option');
-//         option.textContent = city;
-
-//         selectCity.appendChild(option);
-//       })
-//     }
-//   });
-
-// }).catch(err => console.log("there is error : ",err));
+          selectCity.appendChild(option);
+        });
+      }
+    });
+  })
+  .catch((err) => console.log("there is error : ", err));
 
 // // city that user will select
 selectCity.addEventListener("change", (event) => {
-
-  const selectedCity = event.target.value;       // new city the user selected
+  var selectedCity = event.target.value; // new city the user selected
 
   if (selectedCity !== "Select City") {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`;
 
     fetch(weatherUrl)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error("City weather data not found!");
         }
         return response.json();
       })
-      .then(data => {
-
+      .then((data) => {
         updateWeatherUI(data);
       })
-      .catch(error => console.error("Error fetching weather:", error));
+      .catch((error) => console.error("Error fetching weather:", error));
   }
 });
 
-const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
-const selectCity = document.getElementById("city");
+// const citiesUrl = "https://countriesnow.space/api/v0.1/countries";
+// const selectCity = document.getElementById("city");
 
-fetch(citiesUrl)
-  .then((res) => res.json())
-  .then((data) => {
-    const countriesData = data.data;
+// fetch(citiesUrl)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     const countriesData = data.data;
 
-    // مسح الخيارات الحالية في القائمة المنسدلة
-    selectCity.innerHTML = `<option>Select City</option>`;
+//     // مسح الخيارات الحالية في القائمة المنسدلة
+//     selectCity.innerHTML = `<option>Select City</option>`;
 
-    // إضافة أسماء البلدان كخيارات في القائمة المنسدلة
-    countriesData.forEach((country) => {
-      const option = document.createElement("option");
-      option.textContent = country.country; // اسم البلد
-      option.value = country.country; // قيمة البلد
-      selectCity.appendChild(option);
-    });
-  })
-  .catch((err) => console.log("هناك خطأ: ", err));
+//     // إضافة أسماء البلدان كخيارات في القائمة المنسدلة
+//     countriesData.forEach((country) => {
+//       const option = document.createElement("option");
+//       option.textContent = country.country; // اسم البلد
+//       option.value = country.country; // قيمة البلد
+//       selectCity.appendChild(option);
+//     });
+//   })
+//   .catch((err) => console.log("هناك خطأ: ", err));
 
-// display data in ui
+// // display data in ui
 function updateWeatherUI(data) {
   // ************** temp & cond for selected city (in left side) ****************
   const temperatureElement = document.getElementById("currentTemp");
@@ -109,6 +126,7 @@ function updateWeatherUI(data) {
 
 // *************************************** weekly weather *****************************************
 
+var selectedCity = "Assiut";
 const city = "Assiut";
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -238,3 +256,57 @@ window.onload = function () {
     enableDarkMode();
   }
 };
+
+const apiKey3 = "31b8d7e4ae5c4914bda173416252801"; // استبدل بمفتاح API الخاص بك
+const city2 = "Asyut"; // المدينة المطلوبة
+const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey3}&q=${city2}&days=7&lang=ar`;
+
+const weatherForecastElement = document.getElementById("weather-forecast");
+
+// جلب بيانات الطقس
+fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    const forecastDays = data.forecast.forecastday;
+    var delay = 100;
+    // عرض توقعات الطقس لكل يوم
+    forecastDays.forEach((day) => {
+      const date = new Date(day.date).toLocaleDateString("en-US", {
+        weekday: "long",
+      });
+      const icon = day.day.condition.icon;
+      const condition = day.day.condition.text;
+      const maxTemp = day.day.maxtemp_c;
+      const minTemp = day.day.mintemp_c;
+
+      let weatherImage = "images/fi3.png"; // الصورة الافتراضية (مشمس)
+      if (condition.includes("رياح") || condition.includes("windy")) {
+        weatherImage = "images/fi5.png"; // صورة الرياح
+      } else if (condition.includes("ممطر") || condition.includes("rain")) {
+        weatherImage = "images/fi5.png"; // صورة المطر
+      }
+
+      // إنشاء بطاقة لكل يوم
+      const card = `
+       
+
+
+                   <div
+              class="item d-flex flex-column justify-content-between align-items-center p-4 bg-light"
+            >
+              <img src="${weatherImage}" />
+              <h4>${maxTemp}°C / ${minTemp}°C</h4>
+              <h4>${date.slice(0, 3)}</h4>
+            </div>
+      `;
+
+      // إضافة البطاقة إلى الصفحة
+      weatherForecastElement.innerHTML += card;
+      delay += 200;
+    });
+  })
+  .catch((error) => {
+    console.error("حدث خطأ أثناء جلب البيانات:", error);
+    weatherForecastElement.innerHTML =
+      '<p class="text-danger">فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.</p>';
+  });

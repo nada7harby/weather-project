@@ -454,12 +454,17 @@ body {
     align-items: center;
     margin-bottom: 100px;
 }
-
+#forecast .content .lef{
+ 
+}
+#today{
+    font-size: 20px;
+}
 #forecast .content .left,
 #forecast .content .right {
     background: linear-gradient(to bottom, rgba(62, 45, 143), rgba(157, 82, 172, 0.7));
     border-radius: 1rem;
-
+    padding: 30px 40px;
 }
 .navbar-toggler {
     background: linear-gradient(to bottom, #fd7600 0%, #ffa805 100%);
@@ -504,6 +509,8 @@ body {
     color: white;
     font-weight: 600;
     margin: 0;
+    font-size: 25px;
+    color: #FD7600;
 }
 
 #forecast .content .right .data {
@@ -512,7 +519,8 @@ body {
 }
 
 #forecast .content .right .data img {
-    height: 50px;
+    height: 90px;
+    width: 90px;
     margin-bottom: 0.5rem;
     animation: zoomInOut 2s infinite ease-in-out;
 }
