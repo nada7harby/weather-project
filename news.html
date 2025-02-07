@@ -197,6 +197,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+<<<<<<< Updated upstream
       AOS.init();
       window.onload = function () {
         // Ensure default background is white
@@ -206,6 +207,26 @@
         var isDark = localStorage.getItem("darkMode");
         if (isDark === "true") {
           enableDarkMode();
+=======
+        window.onload = function () {
+            // Ensure default background is white
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+
+            var isDark = localStorage.getItem('darkMode');
+            if (isDark === 'true') {
+                enableDarkMode();
+            }
+        };
+
+        function toggledarkmode() {
+            var isDark = localStorage.getItem('darkMode');
+            if (isDark === 'true') {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+>>>>>>> Stashed changes
         }
       };
 
@@ -218,12 +239,23 @@
         }
       }
 
+<<<<<<< Updated upstream
       function enableDarkMode() {
         document.body.classList.add("dark-mode");
         document.body.style.backgroundColor = "black";
         document.body.style.color = "#6b6b6b";
         localStorage.setItem("darkMode", "true");
       }
+=======
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            localStorage.removeItem('darkMode');
+        }
+        AOS.init();
+
+>>>>>>> Stashed changes
 
       function disableDarkMode() {
         document.body.classList.remove("dark-mode");

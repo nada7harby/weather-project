@@ -165,7 +165,7 @@ fetch(apiUrl)
       "فشل في تحميل بيانات الطقس. يرجى المحاولة مرة أخرى.";
   });
 window.onload = function () {
-  
+
   document.body.style.backgroundColor = "white";
   document.body.style.color = "black";
 
